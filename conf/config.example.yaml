@@ -1,0 +1,31 @@
+app_name: "Merak"
+
+server:
+  url: "localhost"
+  port: 8080
+
+# Logging configuration, Either "file","network" or "console"
+log:
+  mode: file
+  level: INFO
+  path: ./data/logs/
+  filename: ""
+
+# Database to use. Either "mysql", "postgres" or "sqlite3".
+database:
+  # sqlite3 configuration
+  db_type: sqlite
+  path: ./data/test.db
+
+  # postgres configuration
+  # db_type: pgsql
+  # host: ""
+  # name: "test"
+  # user: ""
+  # passwd: ""
+
+storage:
+  type: local
+  path: "./data"
+  # cloud storage
+  # type: oss
