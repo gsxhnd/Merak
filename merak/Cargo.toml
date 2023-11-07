@@ -1,0 +1,26 @@
+[package]
+name = "merak"
+version = "0.0.1"
+edition = "2021"
+
+
+[[bin]]
+name = "merak"
+path = "src/main.rs"
+test = false
+bench = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = { workspace = true }
+clap = { workspace = true, features = ["derive", "env"] }
+futures = { workspace = true }
+mime_guess = "2.0"
+rust-embed = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_yaml = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tokio-util = { workspace = true, features = ["codec"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
