@@ -1,20 +1,20 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import Dashboard from "@/layout/Dashboard.vue";
+import FolderTree from "@/components/FloderTree.vue";
 
-const Login = { template: "<div>Login</div>" };
-
-// const RootRoute: RouteRecordRaw = {
-//   path: "/",
-//   name: "Root",
-//   component: DashboardLayout,
-//   meta: {
-//     title: "Root",
-//   },
-// };
-
-const LoginRoute: RouteRecordRaw = {
+const HomeRoute: RouteRecordRaw = {
   path: "/",
-  name: "Login",
-  component: Login,
+  name: "home",
+  component: Dashboard,
+  meta: {
+    title: "login",
+  },
+};
+
+const TestRoute: RouteRecordRaw = {
+  path: "/test",
+  name: "test",
+  component: FolderTree,
   meta: {
     title: "login",
   },
@@ -22,7 +22,7 @@ const LoginRoute: RouteRecordRaw = {
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [LoginRoute],
+  routes: [HomeRoute, TestRoute],
   // strict: true,
 });
 
