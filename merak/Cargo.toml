@@ -21,6 +21,7 @@ rusqlite = { workspace = true, features = ["bundled"] }
 rust-embed = { workspace = true }
 serde = { workspace = true, features = ["derive"] }
 serde_yaml = { workspace = true }
+sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio"] }
 tokio = { workspace = true, features = ["full"] }
 tokio-util = { workspace = true, features = ["codec"] }
 tracing = { workspace = true }
