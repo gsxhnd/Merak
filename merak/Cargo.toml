@@ -19,6 +19,11 @@ futures = { workspace = true }
 mime_guess = "2.0"
 rusqlite = { workspace = true, features = ["bundled"] }
 rust-embed = { workspace = true }
+sea-orm = { version = "0.12", features = [
+    "sqlx-sqlite",
+    "runtime-tokio-rustls",
+    "macros",
+] }
 serde = { workspace = true, features = ["derive"] }
 serde_yaml = { workspace = true }
 sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio"] }
