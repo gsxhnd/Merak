@@ -1095,6 +1095,7 @@ dependencies = [
  "axum",
  "clap",
  "futures",
+ "merak_entity",
  "mime_guess",
  "rusqlite",
  "rust-embed",
@@ -1106,6 +1107,21 @@ dependencies = [
  "tokio-util",
  "tracing",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "merak_database"
+version = "0.1.0"
+dependencies = [
+ "sea-orm",
+]
+
+[[package]]
+name = "merak_entity"
+version = "0.1.0"
+dependencies = [
+ "sea-orm",
+ "serde",
 ]
 
 [[package]]

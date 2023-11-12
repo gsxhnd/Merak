@@ -1,5 +1,5 @@
 [workspace]
-members = ["merak"]
+members = ["merak-database", "merak-entity", "merak"]
 
 [workspace.package]
 name = "Merak"
@@ -14,6 +14,10 @@ categories = ["network"]
 keywords = [""]
 exclude = [".gitignore", ".cargo/config"]
 rust-version = "1.72"
+
+[path]
+merak_database = { path = "merak-database" }
+merak_entity = { path = "merak-entity" }
 
 [workspace.dependencies]
 axum = { version = "0.6" }
