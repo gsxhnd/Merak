@@ -20,8 +20,8 @@ impl AppState {
     }
 }
 
-pub struct AppStates<DB>{
-    pub db: DB
+pub struct AppStates<DB> {
+    pub db: DB,
 }
 
 pub async fn build_router() -> Router {
