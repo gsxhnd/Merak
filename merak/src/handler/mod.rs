@@ -1,3 +1,3 @@
-mod config;
-
-pub use self::config::{add_tag, index};
+pub mod folder;
+pub mod pic;
+pub mod tag;
