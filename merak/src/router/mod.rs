@@ -3,37 +3,30 @@ use axum::{
     http::StatusCode,
     response::IntoResponse,
     routing::{get, post},
-    Json, Router, Server,
+    Router,
 };
-
-use crate::database::{self};
+use merak_database::Db;
 
 #[derive(Clone)]
 pub struct AppState {
-    pub db: database::db,
+    pub db: Db,
 }
 
 impl AppState {
     pub async fn new() -> Self {
-        let db = database::db::new().await;
+        let db = Db::new().await;
+        db.init().await;
         AppState { db }
     }
 }
 
-pub struct AppStates<DB> {
-    pub db: DB,
-}
-
 pub async fn build_router() -> Router {
-    // `GET /` goes to `root`
-    let app = Router::new()
+    Router::new()
         .nest(
             "/api",
             Router::new()
                 .route("/", get(handler::index))
-                .route("/test", get(handler::index)),
+                .route("/test", get(handler::index).post(handler::add_tag)),
         )
-        .with_state(AppState::new().await);
-
-    app
+        .with_state(AppState::new().await)
 }

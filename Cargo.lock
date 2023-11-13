@@ -1095,6 +1095,7 @@ dependencies = [
  "axum",
  "clap",
  "futures",
+ "merak_database",
  "merak_entity",
  "mime_guess",
  "rusqlite",
@@ -1114,7 +1115,9 @@ dependencies = [
 name = "merak_database"
 version = "0.1.0"
 dependencies = [
+ "merak_entity",
  "sea-orm",
+ "sea-query",
 ]
 
 [[package]]

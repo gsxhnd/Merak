@@ -1,4 +1,3 @@
-mod database;
 mod handler;
 mod router;
 use std::net::SocketAddr;

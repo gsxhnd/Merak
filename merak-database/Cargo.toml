@@ -13,14 +13,13 @@ exclude.workspace = true
 rust-version.workspace = true
 
 [lib]
-name = "merak_entity"
+name = "merak_database"
 path = "src/lib.rs"
 edition = "2021"
 crate-type = ["rlib", "cdylib", "staticlib"]
 
 [dependencies]
-sea-orm = { version = "0.12", features = [
-    "sqlx-sqlite",
-    "runtime-tokio-rustls",
-    "macros",
-] }
+merak_entity = { path = "../merak-entity" }
+
+sea-orm = { workspace = true }
+sea-query = { workspace = true }

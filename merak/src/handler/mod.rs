@@ -1,3 +1,3 @@
 mod config;
 
-pub use self::config::index;
+pub use self::config::{add_tag, index};
