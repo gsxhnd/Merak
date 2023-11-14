@@ -5,7 +5,7 @@ export const useLayoutStore = defineStore("layout", {
     return {
       showRightSidbar: true,
       showLeftSidbar: true,
-      leftSidbarSize: [50,50] as Array<number>,
+      leftSidbarSize: [50, 50] as Array<number>,
     };
   },
   actions: {

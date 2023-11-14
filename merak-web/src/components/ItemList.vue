@@ -1,9 +1,9 @@
 <template>
-  <ScrollPanel
-    class="scroll-panel"
+  <!-- <ScrollPanel
+    class="left-splitter-panel-item"
     :pt="{ bary: 'hover:bg-primary-400 bg-primary-300 opacity-100' }"
-  >
-    <p>
+  > -->
+  <!-- <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -37,14 +37,18 @@
       molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
       delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
       perferendis doloribus asperiores repellat
-    </p>
-    <!-- <Tree :value="nodes" class="tree w-full md:w-30rem"></Tree> -->
-  </ScrollPanel>
+    </p> -->
+  <!-- <Tree :value="nodes" class="tree w-full md:w-30rem"></Tree> -->
+  <!-- </ScrollPanel> -->
 </template>
 <script setup lang="ts">
 import { ref, onBeforeMount } from "vue";
 // import type { Ref } from "vue";
 import ScrollPanel from "primevue/scrollpanel";
+import { useLayoutStore } from "@/stores";
+
+const layoutStore = useLayoutStore();
+let sizeItem = ref(layoutStore.leftSidbarSize[1] + "%");
 
 onBeforeMount(() => {});
 </script>
@@ -56,9 +60,9 @@ onBeforeMount(() => {});
 }
 
 .p-scrollpanel {
-  height: 50%;
+  height: 99%;
 }
-.scroll-panel {
-  //   height: 100%;
-}
+// .left-splitter-panel-item {
+//   height: v-bind(sizeItem);
+// }
 </style>

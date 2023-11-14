@@ -1,9 +1,9 @@
 <template>
-  <ScrollPanel
-    class="scroll-panel"
+  <!-- <ScrollPanel
+    class="left-splitter-panel-item"
     :pt="{ bary: 'hover:bg-primary-400 bg-primary-300 opacity-100' }"
-  >
-    <p>
+  > -->
+  <!-- <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -37,9 +37,9 @@
       molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
       delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
       perferendis doloribus asperiores repellat
-    </p>
-    <!-- <Tree :value="nodes" class="tree w-full md:w-30rem"></Tree> -->
-  </ScrollPanel>
+    </p> -->
+  <!-- <Tree :value="nodes" class="tree w-full md:w-30rem"></Tree> -->
+  <!-- </ScrollPanel> -->
 </template>
 <script setup lang="ts">
 import { ref, onBeforeMount } from "vue";
@@ -51,7 +51,7 @@ import { useLayoutStore } from "@/stores";
 
 const layoutStore = useLayoutStore();
 const nodes: Ref<Array<TreeNode> | undefined> = ref();
-let sizeOne = ref(layoutStore.leftSidbarSize[0] + "%");
+let sizeFolder = ref(layoutStore.leftSidbarSize[1] + "%");
 
 onBeforeMount(() => {
   nodes.value = [];
@@ -64,10 +64,13 @@ onBeforeMount(() => {
   padding: 0;
 }
 .p-scrollpanel {
-  height: v-bind(sizeOne);
+  height: 99%;
 }
 
+// .left-splitter-panel-item {
+//   height: v-bind(sizeFolder);
+// }
+
 .scroll-panel {
-  // height: 100%;
 }
 </style>

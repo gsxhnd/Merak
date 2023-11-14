@@ -3,7 +3,7 @@
     <template v-if="layoutStore.showLeftSidbar">
       <SplitterPanel
         layout="vertical"
-        class="flex align-items-center justify-content-center"
+        class="left-panel flex align-items-center justify-content-center"
         :size="20"
         :minSize="10"
       >
@@ -41,6 +41,9 @@ onBeforeMount(() => {
 <style lang="less" scoped>
 .dashboard-layout {
   min-height: 100vh;
+  .left-panel {
+    height: calc(100vh - 8px);
+  }
   .right-sidebar-header {
     display: flex;
   }

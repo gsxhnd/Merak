@@ -1,20 +1,19 @@
 <template>
-  <Splitter class="sidebar-right" layout="vertical" v-on:resize="resize">
+  <Splitter class="left-splitter" layout="vertical" v-on:resize="resize">
     <SplitterPanel
-      class="flex align-items-center justify-content-center"
+      class="left-splitter-item flex align-items-center justify-content-center"
       :size="50"
       :min-size="20"
     >
       <div class="right-sidebar-header">123</div>
       <ItemList />
-    </SplitterPanel>
-    <SplitterPanel class="folder" :size="50">
       <FolderTree />
     </SplitterPanel>
   </Splitter>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
 import { SplitterResizeEvent } from "primevue/splitter";
@@ -31,14 +30,14 @@ function resize(e: SplitterResizeEvent) {
 </script>
 
 <style lang="less" scoped>
-// .dashboard-layout {
-//   min-height: 100vh;
-//   .right-sidebar-header {
-//     display: flex;
-//   }
-// }
-.sidebar-right {
-  height: 100%;
-  max-height: calc(100% - 8px);
+.left-splitter {
+  height: calc(100% - 4px);
+  max-height: calc(100% - 4px);
+  // &-item {
+  //   height: calc(v-bind(sizeItem) - 4px);
+  // }
+  // &-folder {
+  //   height: calc(v-bind(sizeFolder) - 4px);
+  // }
 }
 </style>
