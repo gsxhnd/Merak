@@ -13,7 +13,7 @@ pub struct AppState {
 impl AppState {
     pub async fn new() -> Self {
         let db = Db::new().await;
-        db.init().await;
+        db.init_sqlite().await;
         AppState { db }
     }
 }
